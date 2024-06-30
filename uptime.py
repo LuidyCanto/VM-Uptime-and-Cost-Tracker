@@ -31,6 +31,9 @@ def get_cost(node, vmid, rate_per_second):
 node = "your_node_name"
 vmid = "your_vmid"
 
+# Define a taxa de custo por segundo
+rate_per_second = 0.0001  
+
 # Obtém o tempo de atividade da VM
 uptime_seconds = get_vm_uptime(node, vmid)
 
