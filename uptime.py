@@ -39,7 +39,6 @@ uptime_seconds = get_vm_uptime(node, vmid)
 
 # Calcula o custo
 cost = calculate_cost(uptime_seconds, rate_per_second)
-#Calcula o custo
-cost = calculate_cost(uptime_seconds, rate_per_second)
+
 
 
