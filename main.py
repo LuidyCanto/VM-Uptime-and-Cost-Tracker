@@ -58,17 +58,6 @@ try:
         logging.error("Decoding JSON has failed")  # Registra um erro se a decodificação falhar
 except HTTPError as http_err:
     logging.error(f'HTTP error occurred: {http_err}')  # Registra um erro se ocorrer um erro HTTP
-
-try:
-    response = requests.post(WHCMS_URL, headers=headers, data=payload, timeout=10)
-    response.raise_for_status()  # Raises HTTPError for bad responses
-    try:
-        invoice = response.json()
-        print(invoice)
-    except ValueError:  # includes simplejson.decoder.JSONDecodeError
-        logging.error("Decoding JSON has failed")
-except HTTPError as http_err:
-    logging.error(f'HTTP error occurred: {http_err}')
 except ConnectionError as conn_err:
     logging.error(f'Connection error occurred: {conn_err}')
 except Timeout as timeout_err:
